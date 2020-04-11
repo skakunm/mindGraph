@@ -109,9 +109,10 @@ class mGraph:
 
     def draw_graph(self):
         nod = self.g.nodes
+        pos = nx.drawing.nx_agraph.graphviz_layout(self.g, prog='dot')
         plt.clf()
         nx.draw_networkx(self.g, node_color=[nod[n]['color'] for n in nod],
-                         labels={i: str(i) + ': ' + nod[i]['text'] for i in nod}, alpha=0.5)
+                         labels={i: str(i) + ': ' + nod[i]['text'] for i in nod}, alpha=0.5, pos=pos)
         plt.show()
 
     # manage connections
