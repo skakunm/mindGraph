@@ -39,7 +39,7 @@ class mGraph:
             elif type == 'answer':
                 color = 'g' if positive else 'r'
             elif type == 'todo':
-                color = 'xkcd:pale orange' if positive else 'xkcd:brownish orange'
+                color = 'xkcd:pale orange' if positive else 'xkcd:brownish red'
             elif type == 'branch':
                 color = 'xkcd:dark grey'
             else:
@@ -62,7 +62,7 @@ class mGraph:
 
     def add_todo(self, from_ids, todo, finished=False, to_ids=[]):
         self.curr_id += 1
-        self.g.add_node(self.curr_id, type='todo', color='xkcd:brownish green' if finished else 'xkcd:brownish red',
+        self.g.add_node(self.curr_id, type='todo', color='xkcd:pale orange' if finished else 'xkcd:brownish red',
                         text=todo, positive=finished)
         self.__insert_node(from_ids, to_ids)
 
@@ -89,11 +89,17 @@ class mGraph:
     def print(self, from_id=0, depth=10, num_spaces=1):
         self.__print(from_id, depth, num_spaces, 0)
 
-    def get_open_questions(self, thr=0):
-        for nod in self.g.nodes:
-            num_of_q = len(self.g[nod])
-            if self.g.nodes[nod]['type'] == 'question' and num_of_q <= thr:
-                print(str(nod) + ", nq=" + str(num_of_q) + ': ' + self.g.nodes[nod]['text'])
+    def get_open_questions(self, only_positive=False):
+        for node in self.g.nodes:
+            if self.g.nodes[node]['type'] == 'question':
+                has_answer = False
+                for s in self.g.successors(node):
+                    if self.g.nodes[s]['type'] == 'answer':
+                        if not only_positive or (only_positive and self.g.nodes[s]['positive']):
+                            has_answer = True
+                            break
+                if not has_answer:
+                    print(str(node) + ': ' + self.g.nodes[node]['text'])
 
     def get_todo(self):
         for nod in self.g.nodes:

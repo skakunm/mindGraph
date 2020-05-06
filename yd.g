@@ -41,13 +41,6 @@
           <attvalue for="2" value="r" />
         </attvalues>
       </node>
-      <node id="4" label="4">
-        <attvalues>
-          <attvalue for="0" value="Problem odredjivanja smera" />
-          <attvalue for="1" value="question" />
-          <attvalue for="2" value="b" />
-        </attvalues>
-      </node>
       <node id="5" label="5">
         <attvalues>
           <attvalue for="0" value="Skontaj kako ucitati GPS" />
@@ -143,9 +136,9 @@
       <node id="17" label="17">
         <attvalues>
           <attvalue for="0" value="Smislio sam drugo resenje" />
-          <attvalue for="3" value="false" />
+          <attvalue for="3" value="true" />
           <attvalue for="1" value="answer" />
-          <attvalue for="2" value="r" />
+          <attvalue for="2" value="g" />
         </attvalues>
       </node>
       <node id="18" label="18">
@@ -260,7 +253,7 @@
         <attvalues>
           <attvalue for="1" value="question" />
           <attvalue for="2" value="b" />
-          <attvalue for="0" value="Da li da cuvam i neki id-&gt;sliku?" />
+          <attvalue for="0" value="Da li da cuvam i neki id za sliku?" />
         </attvalues>
       </node>
       <node id="33" label="33">
@@ -318,15 +311,58 @@
           <attvalue for="3" value="true" />
         </attvalues>
       </node>
+      <node id="40" label="40">
+        <attvalues>
+          <attvalue for="1" value="branch" />
+          <attvalue for="2" value="xkcd:dark grey" />
+          <attvalue for="0" value="Vizualizacija baze" />
+        </attvalues>
+      </node>
+      <node id="41" label="41">
+        <attvalues>
+          <attvalue for="1" value="branch" />
+          <attvalue for="2" value="xkcd:dark grey" />
+          <attvalue for="0" value="Ucitaj elevaciju za 3D" />
+        </attvalues>
+      </node>
+      <node id="42" label="42">
+        <attvalues>
+          <attvalue for="1" value="question" />
+          <attvalue for="2" value="b" />
+          <attvalue for="0" value="Koji API?" />
+        </attvalues>
+      </node>
+      <node id="43" label="43">
+        <attvalues>
+          <attvalue for="1" value="answer" />
+          <attvalue for="2" value="r" />
+          <attvalue for="0" value="Open elevation ne radi dobro" />
+          <attvalue for="3" value="false" />
+        </attvalues>
+      </node>
+      <node id="44" label="44">
+        <attvalues>
+          <attvalue for="1" value="todo" />
+          <attvalue for="2" value="xkcd:brownish red" />
+          <attvalue for="0" value="Nadji neki drugi i testiraj" />
+          <attvalue for="3" value="false" />
+        </attvalues>
+      </node>
+      <node id="45" label="45">
+        <attvalues>
+          <attvalue for="1" value="todo" />
+          <attvalue for="2" value="xkcd:brownish red" />
+          <attvalue for="0" value="Eksperimentisi sa ovim" />
+          <attvalue for="3" value="false" />
+        </attvalues>
+      </node>
     </nodes>
     <edges>
       <edge id="0" source="0" target="1" />
       <edge id="1" source="1" target="2" />
       <edge id="2" source="1" target="3" />
-      <edge id="3" source="2" target="4" />
       <edge id="4" source="2" target="5" />
       <edge id="6" source="2" target="7" />
-      <edge id="13" source="4" target="12" />
       <edge id="5" source="5" target="8" />
       <edge id="9" source="5" target="9" />
       <edge id="10" source="5" target="10" />
@@ -367,8 +403,14 @@
       <edge id="44" source="35" target="37" />
       <edge id="48" source="35" target="39" />
       <edge id="45" source="38" target="29" />
-      <edge id="46" source="38" target="30" />
       <edge id="47" source="38" target="37" />
+      <edge id="46" source="38" target="40" />
+      <edge id="50" source="39" target="45" />
+      <edge id="49" source="40" target="30" />
+      <edge id="51" source="40" target="41" />
+      <edge id="52" source="41" target="42" />
+      <edge id="53" source="42" target="43" />
+      <edge id="54" source="42" target="44" />
     </edges>
   </graph>
 </gexf>
