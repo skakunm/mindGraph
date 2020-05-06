@@ -40,6 +40,8 @@ class mGraph:
                 color = 'g' if positive else 'r'
             elif type == 'todo':
                 color = 'xkcd:pale orange' if positive else 'xkcd:brownish orange'
+            elif type == 'branch':
+                color = 'xkcd:dark grey'
             else:
                 print("Type not allowed")
                 return
@@ -62,6 +64,11 @@ class mGraph:
         self.curr_id += 1
         self.g.add_node(self.curr_id, type='todo', color='xkcd:brownish green' if finished else 'xkcd:brownish red',
                         text=todo, positive=finished)
+        self.__insert_node(from_ids, to_ids)
+
+    def add_branch(self, from_ids, title, to_ids=[]):
+        self.curr_id += 1
+        self.g.add_node(self.curr_id, type='branch', color='xkcd:dark grey', text=title)
         self.__insert_node(from_ids, to_ids)
 
     def todo_done(self, ids, done=True):
@@ -95,7 +102,7 @@ class mGraph:
 
     def get_node(self, id):
         node = self.g.nodes[id]
-        type_dict = {'start': 'S', 'question': 'Q', 'answer': 'A', 'todo': 'T'}
+        type_dict = {'start': 'S', 'branch': 'B', 'question': 'Q', 'answer': 'A', 'todo': 'T'}
         prefix = ('Y - ' if node['positive'] else 'N - ') if 'positive' in node else None
         print("{}, nc={}, t={}: {}".format(
             str(id),
@@ -135,6 +142,9 @@ class mGraph:
         if path is None:
             print('Path not specified')
             return
+        else:
+            self.path = path
+
         nx.write_gexf(self.g, path)
 
     def load_graph(self, path=None):

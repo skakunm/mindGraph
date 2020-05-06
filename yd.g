@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gexf version="1.2" xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd">
-  <meta lastmodifieddate="2020-04-09">
+  <meta lastmodifieddate="2020-05-06">
     <creator>NetworkX 2.4</creator>
   </meta>
   <graph defaultedgetype="directed" mode="static" name="">
@@ -228,9 +228,94 @@
       <node id="28" label="28">
         <attvalues>
           <attvalue for="0" value="Lin. interp. da bi se povecao broj sample-ova" />
-          <attvalue for="3" value="true" />
-          <attvalue for="2" value="g" />
+          <attvalue for="3" value="false" />
+          <attvalue for="2" value="r" />
           <attvalue for="1" value="answer" />
+        </attvalues>
+      </node>
+      <node id="29" label="29">
+        <attvalues>
+          <attvalue for="1" value="todo" />
+          <attvalue for="2" value="xkcd:pale orange" />
+          <attvalue for="0" value="Optimizuj izvrsavanje" />
+          <attvalue for="3" value="true" />
+        </attvalues>
+      </node>
+      <node id="30" label="30">
+        <attvalues>
+          <attvalue for="1" value="todo" />
+          <attvalue for="2" value="xkcd:pale orange" />
+          <attvalue for="0" value="Dodaj nizove koji cuvaju koliko je tacaka slikano" />
+          <attvalue for="3" value="true" />
+        </attvalues>
+      </node>
+      <node id="31" label="31">
+        <attvalues>
+          <attvalue for="1" value="question" />
+          <attvalue for="2" value="b" />
+          <attvalue for="0" value="Prvi elem niza gps vreme u sekundama?" />
+        </attvalues>
+      </node>
+      <node id="32" label="32">
+        <attvalues>
+          <attvalue for="1" value="question" />
+          <attvalue for="2" value="b" />
+          <attvalue for="0" value="Da li da cuvam i neki id-&gt;sliku?" />
+        </attvalues>
+      </node>
+      <node id="33" label="33">
+        <attvalues>
+          <attvalue for="1" value="answer" />
+          <attvalue for="2" value="g" />
+          <attvalue for="0" value="Da, da moze da se prikaze broj prolaza" />
+          <attvalue for="3" value="true" />
+        </attvalues>
+      </node>
+      <node id="34" label="34">
+        <attvalues>
+          <attvalue for="1" value="answer" />
+          <attvalue for="2" value="g" />
+          <attvalue for="0" value="Da, nije fiksno 5fps" />
+          <attvalue for="3" value="true" />
+        </attvalues>
+      </node>
+      <node id="35" label="35">
+        <attvalues>
+          <attvalue for="1" value="question" />
+          <attvalue for="2" value="b" />
+          <attvalue for="0" value="Da li je sve ok sa seq_id=123" />
+        </attvalues>
+      </node>
+      <node id="36" label="36">
+        <attvalues>
+          <attvalue for="1" value="answer" />
+          <attvalue for="2" value="r" />
+          <attvalue for="0" value="Ne, provalio sam da mi ne valja funk za odlucivanje" />
+          <attvalue for="3" value="false" />
+        </attvalues>
+      </node>
+      <node id="37" label="37">
+        <attvalues>
+          <attvalue for="1" value="todo" />
+          <attvalue for="2" value="xkcd:pale orange" />
+          <attvalue for="0" value="Prepravi funk i testiraj" />
+          <attvalue for="3" value="true" />
+        </attvalues>
+      </node>
+      <node id="38" label="38">
+        <attvalues>
+          <attvalue for="1" value="answer" />
+          <attvalue for="2" value="g" />
+          <attvalue for="0" value="Lin. interp ali srazmerna vremenu" />
+          <attvalue for="3" value="true" />
+        </attvalues>
+      </node>
+      <node id="39" label="39">
+        <attvalues>
+          <attvalue for="1" value="answer" />
+          <attvalue for="2" value="g" />
+          <attvalue for="0" value="Odredjivanje smera je problematicno" />
+          <attvalue for="3" value="true" />
         </attvalues>
       </node>
     </nodes>
@@ -270,6 +355,20 @@
       <edge id="33" source="23" target="27" />
       <edge id="31" source="24" target="25" />
       <edge id="34" source="27" target="28" />
+      <edge id="35" source="27" target="38" />
+      <edge id="37" source="28" target="31" />
+      <edge id="36" source="28" target="35" />
+      <edge id="38" source="30" target="32" />
+      <edge id="39" source="31" target="34" />
+      <edge id="40" source="32" target="33" />
+      <edge id="41" source="34" target="37" />
+      <edge id="42" source="34" target="27" />
+      <edge id="43" source="35" target="36" />
+      <edge id="44" source="35" target="37" />
+      <edge id="48" source="35" target="39" />
+      <edge id="45" source="38" target="29" />
+      <edge id="46" source="38" target="30" />
+      <edge id="47" source="38" target="37" />
     </edges>
   </graph>
 </gexf>
