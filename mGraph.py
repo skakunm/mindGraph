@@ -1,5 +1,11 @@
+#Mac setup,
+# First install matplotlib and networkx
+# then install graphviz using brew install graphviz
+# then install pygraphviz using pip install pygraphviz
+
 import networkx as nx
 import matplotlib.pyplot as plt
+from math import cos, sin, pi
 
 
 class mGraph:
@@ -121,12 +127,25 @@ class mGraph:
             self.get_node(ch)
 
     def draw_graph(self):
+        self.save_graph()
         nod = self.g.nodes
         pos = nx.drawing.nx_agraph.graphviz_layout(self.g, prog='dot')
         plt.clf()
+
+        ang = pi*0.4
+        ct = cos(ang)
+        st = sin(ang)
+
+        for i in pos:
+            p = pos[i]
+            temp = (p[0]*ct - p[1]*st, p[0]*st + p[1]*ct)
+            pos[i] = temp
+
+
         nx.draw_networkx(self.g, node_color=[nod[n]['color'] for n in nod],
                          labels={i: str(i) + ': ' + nod[i]['text'] for i in nod}, alpha=0.5, pos=pos)
         plt.show()
+        self.save_graph()
 
     # manage connections
 
@@ -150,6 +169,11 @@ class mGraph:
             return
         else:
             self.path = path
+        try:
+            nx.write_gexf(self.g, path+'_tmp')
+        except:
+            print('Save failed, _tmp broken, regular file not broken')
+            return
 
         nx.write_gexf(self.g, path)
 
